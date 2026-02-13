@@ -8,6 +8,7 @@ export default defineConfig({
     open: true
   },
   define: {
+    global: 'window',
     'process.env': {}
   }
 })
