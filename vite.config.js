@@ -7,9 +7,12 @@ export default defineConfig({
     port: 5173,
     open: true,
   },
+  build: {
+    minify: "terser",
+  },
   define: {
-    __DEFINES__: JSON.stringify({}),
-    __HMR_CONFIG_NAME__: JSON.stringify("import.meta.hot"),
-    __BASE__: JSON.stringify("/"),
+    __DEFINES__: "{}",
+    __HMR_CONFIG_NAME__: '"import.meta.hot"',
+    __BASE__: '"/"',
   },
 });
