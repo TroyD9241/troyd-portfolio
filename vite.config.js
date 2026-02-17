@@ -22,5 +22,6 @@ export default defineConfig({
     __HMR_BASE__: '"/"',
     __HMR_TIMEOUT__: "30000",
     __HMR_ENABLE_OVERLAY__: "false",
+    __WS_TOKEN__: '""',
   },
 });
