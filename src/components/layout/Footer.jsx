@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { GithubIcon, LinkedinIcon } from "./SocialIcons";
+import logoSvg from "../../assets/logo.svg";
 
 const socialLinks = [
   { href: "https://github.com/", label: "GitHub", icon: GithubIcon },
@@ -43,11 +44,7 @@ export function Footer() {
               whileHover={{ scale: 1.05 }}
               className="inline-block mb-4"
             >
-              <img
-                src="/src/assets/logo.svg"
-                alt="Troy Dawson"
-                className="h-14"
-              />
+              <img src={logoSvg} alt="Troy Dawson" className="h-14" />
             </motion.div>
             <p className="text-text-light text-base leading-relaxed mb-4">
               Building beautiful, functional websites that help local businesses

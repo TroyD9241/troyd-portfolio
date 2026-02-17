@@ -8,6 +8,7 @@ import {
   CommandLineIcon,
   BriefcaseIcon,
 } from "@heroicons/react/24/outline";
+import profileLogoSvg from "../../assets/profile-logo.svg";
 
 export function About() {
   const ref = useRef(null);
@@ -76,7 +77,7 @@ export function About() {
                     className="mx-auto w-full flex items-center justify-center"
                   >
                     <img
-                      src="/src/assets/profile-logo.svg"
+                      src={profileLogoSvg}
                       alt="Troy Dawson"
                       className="w-full h-auto max-w-md drop-shadow-2xl"
                     />

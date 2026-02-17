@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import logoSvg from "../../assets/logo.svg";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -38,7 +39,7 @@ export function Header() {
           className="relative group"
         >
           <img
-            src="/src/assets/logo.svg"
+            src={logoSvg}
             alt="Troy Dawson"
             className="h-10 transition-transform duration-300 group-hover:scale-105"
           />
