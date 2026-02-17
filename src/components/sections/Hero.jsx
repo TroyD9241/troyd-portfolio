@@ -1,23 +1,31 @@
-import { motion, useScroll, useTransform } from 'framer-motion'
-import { useRef } from 'react'
-import { Section } from '../ui/Section'
-import { Button } from '../ui/Button'
-import { fadeInUp, staggerContainer } from '../../lib/animations'
-import { ArrowDownIcon, CodeBracketIcon, SparklesIcon } from '@heroicons/react/24/outline'
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import { Section } from "../ui/Section";
+import { Button } from "../ui/Button";
+import { fadeInUp, staggerContainer } from "../../lib/animations";
+import {
+  ArrowDownIcon,
+  CodeBracketIcon,
+  SparklesIcon,
+} from "@heroicons/react/24/outline";
 
 export function Hero() {
-  const ref = useRef(null)
+  const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start start', 'end start']
-  })
+    offset: ["start start", "end start"],
+  });
 
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%'])
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
-  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95])
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
 
   return (
-    <Section id="hero" ref={ref} className="min-h-screen flex items-center pt-20 overflow-hidden">
+    <Section
+      id="hero"
+      ref={ref}
+      className="min-h-screen flex items-center pt-20 overflow-hidden"
+    >
       <div className="container mx-auto relative">
         <motion.div
           variants={staggerContainer}
@@ -27,69 +35,60 @@ export function Hero() {
         >
           <motion.p
             variants={fadeInUp}
-            className="text-accent font-medium mb-4 tracking-widest uppercase flex items-center gap-2"
+            className="text-accent font-semibold mb-6 text-lg flex items-center gap-3"
           >
             <motion.span
-              animate={{ opacity: [0.5, 1, 0.5] }}
+              animate={{ scale: [1, 1.2, 1] }}
               transition={{ repeat: Infinity, duration: 2 }}
-              className="w-2 h-2 rounded-full bg-accent"
+              className="w-3 h-3 rounded-full bg-accent shadow-lg"
             />
-            Fullstack Developer
+            Your Friendly Local Developer
           </motion.p>
 
           <motion.h1
             variants={fadeInUp}
-            className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold text-primary leading-tight mb-6"
+            className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-primary leading-tight mb-6"
           >
-            I build websites that{' '}
+            Building websites that help{" "}
             <motion.span
               variants={fadeInUp}
-              className="text-accent relative inline-flex items-center"
+              className="text-accent relative inline-block"
             >
-              grow
+              your business
               <motion.svg
-                className="absolute -bottom-2 left-0 w-full h-4 text-accent/30"
-                viewBox="0 0 200 20"
+                className="absolute -bottom-2 left-0 w-full h-3"
+                viewBox="0 0 300 10"
                 preserveAspectRatio="none"
               >
                 <motion.path
-                  d="M0,10 Q50,0 100,10 T200,10"
+                  d="M0,7 Q75,0 150,7 T300,7"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="3"
+                  strokeWidth="4"
+                  strokeLinecap="round"
                   initial={{ pathLength: 0, opacity: 0 }}
-                  animate={{ pathLength: 1, opacity: 1 }}
-                  transition={{ duration: 1, delay: 0.8 }}
+                  animate={{ pathLength: 1, opacity: 0.4 }}
+                  transition={{ duration: 1.2, delay: 0.8 }}
                 />
               </motion.svg>
-            </motion.span>
-            {' '}local businesses
+            </motion.span>{" "}
+            thrive
           </motion.h1>
 
           <motion.p
             variants={fadeInUp}
-            className="text-xl md:text-2xl text-text-light mb-10 max-w-2xl leading-relaxed"
+            className="text-xl md:text-2xl text-text-light mb-10 max-w-2xl leading-relaxed font-medium"
           >
-            Professional fullstack development for local businesses and startups.
-            Modern technologies, elegant design, and results-driven solutions.
+            Hi! I'm a fullstack developer who loves helping local businesses
+            grow online. From beautiful websites to custom web apps—let's build
+            something great together.
           </motion.p>
 
-          <motion.div
-            variants={fadeInUp}
-            className="flex flex-wrap gap-4"
-          >
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Button href="#contact">
-                Let's Work Together
-              </Button>
+          <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button href="#contact">Let's Work Together</Button>
             </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button variant="secondary" href="#services">
                 View Services
               </Button>
@@ -99,54 +98,58 @@ export function Hero() {
 
         <motion.div
           style={{ y, opacity, scale }}
-          className="absolute right-[-10%] top-1/2 -translate-y-1/2 hidden lg:block w-[500px] h-[500px]"
+          className="absolute right-[-5%] top-1/2 -translate-y-1/2 hidden lg:block w-[450px] h-[450px]"
         >
           <motion.div
             animate={{
               rotate: 360,
-              scale: [1, 1.05, 1]
+              scale: [1, 1.08, 1],
             }}
             transition={{
-              rotate: { duration: 30, repeat: Infinity, ease: 'linear' },
-              scale: { duration: 4, repeat: Infinity, ease: 'easeInOut' }
+              rotate: { duration: 40, repeat: Infinity, ease: "linear" },
+              scale: { duration: 5, repeat: Infinity, ease: "easeInOut" },
             }}
-            className="w-full h-full rounded-full border-2 border-accent/20 border-dashed flex items-center justify-center"
+            className="w-full h-full rounded-full bg-gradient-to-br from-surface/40 to-accent/10 flex items-center justify-center shadow-2xl"
           >
             <motion.div
               animate={{
-                rotate: -360,
-                scale: [1, 1.1, 1]
+                y: [0, -15, 0],
+                rotate: [0, 5, -5, 0],
               }}
-              transition={{
-                rotate: { duration: 20, repeat: Infinity, ease: 'linear' },
-                scale: { duration: 3, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }
-              }}
-              className="w-[80%] h-[80%] rounded-full border border-primary/10 flex items-center justify-center"
+              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+              className="w-32 h-32 rounded-3xl bg-white shadow-xl flex items-center justify-center border-4 border-accent/20"
             >
-              <motion.div
-                animate={{
-                  rotate: 360,
-                  scale: [1, 1.15, 1]
-                }}
-                transition={{
-                  rotate: { duration: 25, repeat: Infinity, ease: 'linear' },
-                  scale: { duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }
-                }}
-                className="w-[60%] h-[60%] rounded-full border border-accent/30 flex items-center justify-center"
-              >
-                <motion.div
-                  animate={{
-                    y: [0, -20, 0],
-                    opacity: [0.8, 1, 0.8]
-                  }}
-                  transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
-                  className="w-20 h-20 rounded-2xl bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center"
-                >
-                  <CodeBracketIcon className="w-10 h-10 text-accent" />
-                </motion.div>
-              </motion.div>
+              <SparklesIcon className="w-16 h-16 text-accent" />
             </motion.div>
           </motion.div>
+
+          <motion.div
+            animate={{
+              y: [0, 20, 0],
+              x: [0, -10, 0],
+            }}
+            transition={{
+              repeat: Infinity,
+              duration: 5,
+              ease: "easeInOut",
+              delay: 0.5,
+            }}
+            className="absolute top-10 right-10 w-20 h-20 rounded-full bg-accent/20 shadow-lg"
+          />
+
+          <motion.div
+            animate={{
+              y: [0, -15, 0],
+              x: [0, 15, 0],
+            }}
+            transition={{
+              repeat: Infinity,
+              duration: 6,
+              ease: "easeInOut",
+              delay: 1,
+            }}
+            className="absolute bottom-16 left-8 w-16 h-16 rounded-2xl bg-surface shadow-lg"
+          />
         </motion.div>
 
         <motion.div
@@ -171,17 +174,41 @@ export function Hero() {
       </div>
 
       <motion.div
-        className="absolute top-1/4 right-0 w-[600px] h-[600px] rounded-full blur-3xl -z-10"
+        animate={{
+          scale: [1, 1.1, 1],
+          opacity: [0.3, 0.5, 0.3],
+        }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-1/4 right-0 w-[700px] h-[700px] rounded-full blur-3xl -z-10"
         style={{
-          background: 'radial(circle, rgba(212,165,116,0.15) 0%, rgba(212,165,116,0) 70%)'
+          background:
+            "radial-gradient(circle, rgba(234,88,12,0.2) 0%, rgba(254,215,170,0.1) 50%, rgba(255,251,235,0) 70%)",
+        }}
+      />
+      <motion.div
+        animate={{
+          scale: [1, 1.15, 1],
+          opacity: [0.2, 0.4, 0.2],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1,
+        }}
+        className="absolute bottom-1/4 left-0 w-[500px] h-[500px] rounded-full blur-3xl -z-10"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(254,243,199,0.4) 0%, rgba(120,53,15,0.1) 50%, rgba(255,251,235,0) 70%)",
         }}
       />
       <motion.div
         className="absolute bottom-1/4 left-0 w-[400px] h-[400px] rounded-full blur-3xl -z-10"
         style={{
-          background: 'radial(circle, rgba(30,41,59,0.1) 0%, rgba(30,41,59,0) 70%)'
+          background:
+            "radial(circle, rgba(30,41,59,0.1) 0%, rgba(30,41,59,0) 70%)",
         }}
       />
     </Section>
-  )
+  );
 }

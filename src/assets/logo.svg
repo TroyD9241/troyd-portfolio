@@ -1,0 +1,19 @@
+<svg width="180" height="50" viewBox="0 0 180 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background decorative element -->
+  <circle cx="15" cy="25" r="20" fill="#FEF3C7" opacity="0.4"/>
+  
+  <!-- Initial circle with accent -->
+  <circle cx="15" cy="25" r="15" fill="#EA580C"/>
+  <text x="15" y="25" font-family="Outfit, sans-serif" font-size="18" font-weight="700" fill="white" text-anchor="middle" dominant-baseline="central">T</text>
+  
+  <!-- Text -->
+  <text x="40" y="20" font-family="Outfit, sans-serif" font-size="20" font-weight="700" fill="#78350F">
+    Troy
+  </text>
+  <text x="40" y="38" font-family="Outfit, sans-serif" font-size="14" font-weight="500" fill="#EA580C">
+    Dawson
+  </text>
+  
+  <!-- Decorative dot -->
+  <circle cx="125" cy="38" r="2" fill="#EA580C"/>
+</svg>

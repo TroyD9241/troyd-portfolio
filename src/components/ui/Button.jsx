@@ -1,25 +1,28 @@
-import { cn } from '../../lib/utils'
-import { motion } from 'framer-motion'
+import { cn } from "../../lib/utils";
+import { motion } from "framer-motion";
 
 export function Button({
-  variant = 'primary',
+  variant = "primary",
   children,
   className,
   href,
   ...props
 }) {
-  const baseStyles = 'inline-flex items-center justify-center px-8 py-4 font-medium rounded-lg transition-all duration-300 ease-out'
+  const baseStyles =
+    "inline-flex items-center justify-center px-8 py-4 font-medium rounded-2xl transition-all duration-300 ease-out shadow-md";
 
   const variants = {
-    primary: 'bg-primary text-white hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5',
-    secondary: 'border-2 border-primary text-primary hover:bg-primary hover:text-white'
-  }
+    primary:
+      "bg-accent text-white hover:bg-accent/90 hover:shadow-xl hover:-translate-y-1",
+    secondary:
+      "bg-surface text-primary hover:bg-surface-dark border-2 border-primary/20",
+  };
 
   const content = (
     <span className={cn(baseStyles, variants[variant], className)} {...props}>
       {children}
     </span>
-  )
+  );
 
   if (href) {
     return (
@@ -31,7 +34,7 @@ export function Button({
       >
         {content}
       </motion.a>
-    )
+    );
   }
 
   return (
@@ -43,5 +46,5 @@ export function Button({
     >
       {content}
     </motion.button>
-  )
+  );
 }

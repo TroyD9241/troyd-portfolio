@@ -38,7 +38,8 @@ You can add more profiles (e.g., `Python / FastAPI`, `Go / REST API`) by copying
 ### JavaScript / TypeScript Web Stack (Profile ID: JS_WEB_APP)
 
 #### Design goals
-
+- when designing always try and reference this site for different ideas that seem to match the users goal. https://land-book.com/design/
+- there are different sections so try and use the proper section when doing design.
 - Simple, maintainable full-stack web apps for small-business/portfolio use.
 - Clear separation between frontend (React + Tailwind) and backend (Express + Prisma + PostgreSQL).
 - Easy onboarding: a new developer should understand layout and standards in under an hour.
