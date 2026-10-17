@@ -40,7 +40,7 @@ export const services = [
     title: "Plus",
     subtitle: "Most popular",
     description:
-      "Adds a photo gallery, extra pages, and a Google Business Profile tune-up. Many buyers pick the middle option, which also makes Starter feel like a good deal.",
+      "Adds a photo gallery, extra pages, and a Google Business Profile tune-up. Ideal for clients who have work to show off and want to stand out.",
     features: [
       "Up to 5 pages",
       "Everything in Starter",
