@@ -1,54 +1,54 @@
 export const projects = [
   {
     id: 1,
-    title: "Local Business Website",
+    title: "Starter",
     description:
-      "Modern, responsive website for a local service provider. Features contact forms, service listings, and Google Maps integration.",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-    techStack: ["React", "Tailwind CSS", "Vite"],
-    demoUrl: null, // Will be added later
+      "A volume product covering the essentials: mobile-friendly design, tap-to-call button, contact form, hours, map, and reviews. Perfect for local businesses getting online fast.",
+    image: "/projects/standardtier.png",
+    techStack: ["HTML/CSS", "JavaScript", "Netlify"],
+    demoUrl: "https://troystandardtier.netlify.app/",
     githubUrl: null,
-    status: "In Development",
+    status: "Live",
     featured: true,
+    tier: "Starter",
   },
   {
     id: 2,
-    title: "E-Commerce Platform",
+    title: "Plus",
     description:
-      "Full-stack online store with product management, shopping cart, checkout flow, and payment integration.",
-    image:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-    techStack: ["React", "Node.js", "PostgreSQL", "Stripe"],
-    demoUrl: null, // Will be added later
+      "Adds a photo gallery, extra pages (services, about), and a Google Business Profile tune-up. Ideal for clients who have work to show off and want to stand out.",
+    image: "/projects/standardplustier.png",
+    techStack: ["HTML/CSS", "JavaScript", "Netlify"],
+    demoUrl: "https://troystandardplus.netlify.app/",
     githubUrl: null,
-    status: "In Development",
+    status: "Live",
     featured: true,
+    tier: "Plus",
   },
   {
     id: 3,
-    title: "Task Management App",
+    title: "Custom",
     description:
-      "Collaborative task management tool with real-time updates, team workspaces, and project tracking features.",
-    image:
-      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=400&fit=crop",
-    techStack: ["React", "TypeScript", "Express", "MongoDB"],
-    demoUrl: null, // Will be added later
+      "For clients who need functionality a static site can't provide: estimate calculators, booking flows, customer portals. Quoted after a discovery call with a written feature list.",
+    image: "/projects/customtier.png",
+    techStack: ["React", "Node.js", "Database"],
+    demoUrl: "https://troycustom.netlify.app/",
     githubUrl: null,
-    status: "In Development",
+    status: "Live",
     featured: true,
+    tier: "Custom",
   },
   {
     id: 4,
-    title: "Restaurant Website & Ordering",
+    title: "Showcase",
     description:
-      "Beautiful website for a local restaurant with online menu, ordering system, and table reservation functionality.",
-    image:
-      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop",
-    techStack: ["React", "Tailwind CSS", "Node.js"],
-    demoUrl: null, // Will be added later
+      "Pure visual impact: animated scroll scenes, WebGL graphics, custom cursor, page transitions. Built for clients who care about brand and want a portfolio centerpiece.",
+    image: "/projects/showcasetier.png",
+    techStack: ["React", "Three.js", "GSAP"],
+    demoUrl: "https://showcasetier.netlify.app/",
     githubUrl: null,
-    status: "In Development",
+    status: "Live",
     featured: true,
+    tier: "Showcase",
   },
 ];

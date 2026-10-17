@@ -37,8 +37,8 @@ export function Portfolio() {
         />
         <div className="container mx-auto relative z-10">
           <SectionHeading
-            title="Recent Work"
-            subtitle="Click on any project to see more details"
+            title="Tier Examples"
+            subtitle="See what each tier looks like in practice — click to view the live site"
           />
 
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
@@ -65,6 +65,11 @@ export function Portfolio() {
                       alt={project.title}
                       className="w-full h-full object-cover"
                     />
+                    {project.tier && (
+                      <div className="absolute top-3 left-3 bg-primary/80 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+                        {project.tier} Tier
+                      </div>
+                    )}
                     {project.status && (
                       <div className="absolute top-3 right-3 bg-accent text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
                         {project.status}
@@ -73,9 +78,14 @@ export function Portfolio() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-heading font-bold text-primary mb-3">
+                  <h3 className="text-2xl font-heading font-bold text-primary mb-1">
                     {project.title}
                   </h3>
+                  {project.tier && (
+                    <p className="text-accent text-sm font-semibold mb-3">
+                      {project.tier} Tier
+                    </p>
+                  )}
 
                   {/* Description */}
                   <p className="text-text-light leading-relaxed mb-4">
