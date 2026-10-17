@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Section } from "../ui/Section";
 import { SectionHeading } from "../ui/SectionHeading";
@@ -7,7 +7,6 @@ import {
   PaperAirplaneIcon,
   CheckCircleIcon,
   ExclamationCircleIcon,
-  SparklesIcon,
 } from "@heroicons/react/24/outline";
 
 const tiers = [
@@ -16,16 +15,6 @@ const tiers = [
   { id: "custom", label: "Custom", price: "Quote", color: "from-purple-400 to-purple-600" },
   { id: "showcase", label: "Showcase", price: "Quote", color: "from-pink-400 to-pink-600" },
   { id: "software", label: "Software", price: "$2k+", color: "from-orange-400 to-orange-600" },
-];
-
-const projectTypes = [
-  { value: "", label: "What are you looking for?" },
-  { value: "starter", label: "Starter Website ($500)" },
-  { value: "plus", label: "Plus Website ($850)" },
-  { value: "custom", label: "Custom Web App (Quote)" },
-  { value: "showcase", label: "Showcase Site (Quote)" },
-  { value: "software", label: "Software Application ($2k+)" },
-  { value: "other", label: "Something else" },
 ];
 
 function FloatingLabel({ label, value, type = "text", required = false, error }) {
@@ -121,7 +110,6 @@ export function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    projectType: "",
     message: "",
     tier: "",
   });
@@ -164,8 +152,7 @@ export function Contact() {
     return (
       formData.name.trim().length >= 2 &&
       /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email) &&
-      formData.message.trim().length >= 10 &&
-      formData.projectType
+      formData.message.trim().length >= 10
     );
   };
 
@@ -217,10 +204,9 @@ export function Contact() {
     let filled = 0;
     if (formData.name) filled++;
     if (formData.email) filled++;
-    if (formData.projectType) filled++;
     if (formData.message) filled++;
     if (formData.tier) filled++;
-    return (filled / 5) * 100;
+    return (filled / 4) * 100;
   })();
 
   return (
@@ -344,7 +330,7 @@ export function Contact() {
                   whileTap={{ scale: 0.95 }}
                   onClick={() => {
                     setFormState("idle");
-                    setFormData({ name: "", email: "", projectType: "", message: "", tier: "" });
+                    setFormData({ name: "", email: "", message: "", tier: "" });
                     setTouched({});
                     setErrors({});
                   }}
@@ -473,43 +459,6 @@ export function Contact() {
                     </AnimatePresence>
                   </motion.div>
                 </div>
-
-                {/* Project Type */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 }}
-                >
-                  <label
-                    htmlFor="projectType"
-                    className="block text-sm font-medium text-primary mb-2"
-                  >
-                    Project Type <span className="text-text-light text-xs">(required)</span>
-                  </label>
-                  <motion.select
-                    whileFocus={{ scale: 1.01 }}
-                    id="projectType"
-                    name="projectType"
-                    value={formData.projectType}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    className="w-full px-5 py-4 rounded-2xl border-2 border-surface focus:border-accent focus:ring-4 focus:ring-accent/20 transition-all duration-200 outline-none font-medium bg-white appearance-none cursor-pointer"
-                    style={{
-                      backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
-                      backgroundRepeat: "no-repeat",
-                      backgroundPosition: "right 1rem center",
-                      backgroundSize: "1.5em 1.5em",
-                      paddingRight: "3rem",
-                    }}
-                  >
-                    {projectTypes.map((type) => (
-                      <option key={type.value} value={type.value}>
-                        {type.label}
-                      </option>
-                    ))}
-                  </motion.select>
-                </motion.div>
 
                 {/* Message */}
                 <motion.div
